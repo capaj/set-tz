@@ -1,0 +1,38 @@
+{
+  "name": "set-tz",
+  "version": "0.0.1",
+  "description": "sets the timezone for your node.js process across all OSes",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard",    
+    "test": "ava -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capaj/set-tz.git"
+  },
+  "keywords": [
+    "timezone",
+    "tzutil",
+    "time",
+    "date",
+    "date",
+    "offset",
+    "testing"
+  ],
+  "author": "capajj@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/capaj/set-tz/issues"
+  },
+  "homepage": "https://github.com/capaj/set-tz#readme",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "standard": "^8.6.0"
+  },
+  "ava": {
+    "files": [
+      "*.spec.js"
+    ]
+  }
+}
