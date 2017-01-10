@@ -1,6 +1,6 @@
 {
   "name": "set-tz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "sets the timezone for your node.js process across all OSes",
   "main": "index.js",
   "scripts": {

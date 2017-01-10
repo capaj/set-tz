@@ -5,10 +5,11 @@ module.exports = (TZ) => {
   if (os.platform() === 'win32') {
     const previousTZ = execSync('tzutil /g').toString()
     const cleanup = () => {
-      console.log(`setting back timezone to ${previousTZ}`)
       execSync(`tzutil /s "${previousTZ}"`)
+      console.log(`timezone was restored to ${previousTZ}`)
     }
     execSync(`tzutil /s "${TZ}"`)
+    console.log(`timezone changed, if process is killed, run manually: tzutil /s ${previousTZ}`)
 
     process.on('exit', cleanup)
     process.on('SIGINT', function () {
