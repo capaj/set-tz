@@ -3,15 +3,14 @@ const os = require('os')
 
 module.exports = (TZ) => {
   if (os.platform() === 'win32') {
-    const out = execSync('tzutil /g')
-    const previousTZ = out.toString()
+    const previousTZ = execSync('tzutil /g').toString()
     const cleanup = () => {
+      console.log('clean')
       execSync(`tzutil /s "${previousTZ}"`)
     }
-    execSync(`tzutil /s "${TZ}"`).toString()
+    execSync(`tzutil /s "${TZ}"`)
 
     process.on('exit', cleanup)
-
     process.on('SIGINT', function () {
       cleanup()
       process.exit(2)
