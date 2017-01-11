@@ -1,2 +1,16 @@
 # set-tz
 sets the timezone for your node.js process across all OSes
+
+## sample usage
+```javascript
+const setTZ = require('set-tz')
+setTZ('UTC')
+// that's it
+
+```
+
+## how it works
+On windows, when you call setTZ() it effectively changes your PC's timezone so beware-if you kill the process, you'll need to manually revert back after you're done-I am assuming you'r process is short-lived. If you don't kill your process, it will revert your original timezone back for you.
+
+On other OSes, it just sets `process.env.TZ`, so beware that the current process won't have the timezome set. Only it's children.
+
