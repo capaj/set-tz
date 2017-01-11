@@ -1,7 +1,7 @@
 {
   "name": "set-tz",
   "version": "0.0.3",
-  "description": "sets the timezone for your node.js process across all OSes",
+  "description": "sets the timezone for your short-lived node.js process in windows too",
   "main": "index.js",
   "scripts": {
     "pretest": "standard",    
