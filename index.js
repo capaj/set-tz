@@ -9,7 +9,7 @@ module.exports = (TZ) => {
       console.log(`timezone was restored to ${previousTZ}`)
     }
     execSync(`tzutil /s "${TZ}"`)
-    console.log(`timezone changed, if process is killed, run manually: tzutil /s ${previousTZ}`)
+    console.log(`timezone changed, if process is killed, run manually: tzutil /s "${previousTZ}"`)
 
     process.on('exit', cleanup)
     process.on('SIGINT', function () {
