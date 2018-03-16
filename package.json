@@ -1,10 +1,10 @@
 {
   "name": "set-tz",
-  "version": "0.0.3",
-  "description": "sets the timezone for your short-lived node.js process in windows too",
+  "version": "0.1.0",
+  "description": "sets the timezone for your short-lived node.js process in any OS-Windows too",
   "main": "index.js",
   "scripts": {
-    "pretest": "standard",    
+    "pretest": "standard",
     "test": "ava -s"
   },
   "repository": {

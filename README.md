@@ -9,6 +9,16 @@ setTZ('UTC')
 
 ```
 
+## Jest usage
+
+It is very common you want to run all your tests in UTC no matter which timezone your computer is in. If you need that, then you can use a shortcut:
+
+```
+  "jest": {
+    "setupFiles": ['set-tz/utc']
+  }
+```
+
 ## Windows caveat
 On windows, when you call `setTZ()` it effectively changes your PC's timezone so beware-if you kill the process, you'll need to manually revert back after you're done-I am assuming you'r process is short-lived. If you don't kill your process, it will revert your original timezone back for you.
 
