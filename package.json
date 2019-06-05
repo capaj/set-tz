@@ -1,11 +1,11 @@
 {
   "name": "set-tz",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "sets the timezone for your short-lived node.js process in any OS-Windows too",
   "main": "index.js",
   "scripts": {
     "pretest": "standard",
-    "test": "ava -s"
+    "test": "ava tests -s"
   },
   "repository": {
     "type": "git",
@@ -34,5 +34,8 @@
     "files": [
       "*.spec.js"
     ]
+  },
+  "dependencies": {
+    "windows-iana": "^3.0.0"
   }
 }

@@ -3,7 +3,6 @@ import setTZ from './index'
 
 test('sets the timezone', t => {
   setTZ('UTC')
-  console.log(new Date().toString())
   t.is(new Date().toString().includes(' GMT+0000 (Coordinated Universal Time)'), true)
 })
 
