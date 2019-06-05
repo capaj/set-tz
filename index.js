@@ -10,7 +10,9 @@ module.exports = (TZ) => {
     ianaTz = ianaWin.findOneIana(TZ)
 
     if (!winTz && !ianaTz) {
-      throw new Error(`The timezone - ${TZ} - does not exist. Please provide a valid Windows or IANA time.`)
+      throw new Error(
+        `The timezone - ${TZ} - does not exist. Please provide a valid Windows or IANA time.`
+      )
     }
   }
 
@@ -21,10 +23,12 @@ module.exports = (TZ) => {
       console.log(`timezone was restored to ${previousTZ}`)
     }
     execSync(`tzutil /s "${winTz || TZ}"`)
-    console.log(`timezone changed, if process is killed, run manually: tzutil /s "${previousTZ}"`)
+    console.warn(
+      `timezone changed, if process is killed, run manually: tzutil /s "${previousTZ}"`
+    )
 
     process.on('exit', cleanup)
-    process.on('SIGINT', function () {
+    process.on('SIGINT', function() {
       process.exit(2)
     })
   } else {

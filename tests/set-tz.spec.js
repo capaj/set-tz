@@ -1,9 +1,12 @@
 import test from 'ava'
-import setTZ from './index'
+import setTZ from '../index'
 
-test('sets the timezone', t => {
+test('sets the timezone', (t) => {
   setTZ('UTC')
-  t.is(new Date().toString().includes(' GMT+0000 (Coordinated Universal Time)'), true)
+  t.is(
+    new Date().toString().includes(' GMT+0000 (Coordinated Universal Time)'),
+    true
+  )
 })
 
 test('throws', (t) => {
