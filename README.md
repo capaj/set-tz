@@ -24,9 +24,9 @@ In Windows environments, it will set the timezone to Eastern Standard Time (beca
 
 It is very common you want to run all your tests in UTC no matter which timezone your computer is in. If you need that, then you can use a shortcut:
 
-```
+```json
   "jest": {
-    "setupFiles": ['set-tz/utc']
+    "globalSetup": ['set-tz/utc']
   }
 ```
 
