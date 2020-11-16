@@ -22,7 +22,7 @@ In Windows environments, it will set the timezone to Eastern Standard Time (beca
 
 ## Jest usage
 
-It is very common you want to run all your tests in UTC no matter which timezone your computer is in. If you need that, then you can use a shortcut:
+It is common to run all your tests in UTC no matter which timezone your computer is in. This ensures your snapshots will run fine on you CI and on your local machine no matter where you are located. If you need that, then you can use a shortcut:
 
 ```json
   "jest": {
