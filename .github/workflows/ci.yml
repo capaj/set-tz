@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+  # The following will also make the workflow run on all PRs, internal and external.
+  # This would create duplicate runs, that we are skipping by adding the "if" to the jobs below.
+  # See https://github.community/t/duplicate-checks-on-push-and-pull-request-simultaneous-event/18012
+  pull_request:
+
+jobs:
+  test:
+    name: Build and Test
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    if: github.event_name == 'push'
+    env:
+      OS: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Restore Dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Dependencies
+        run: yarn
+      - name: Build Packages
+        run: yarn build
+      - name: Run Tests
+        uses: GabrielBB/xvfb-action@v1.0
+        with:
+          run: yarn test

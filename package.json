@@ -4,7 +4,10 @@
   "description": "sets the timezone for your short-lived node.js process in any OS-Windows too",
   "main": "index.js",
   "scripts": {
-    "test": "ava tests -s"
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -27,16 +30,12 @@
   "homepage": "https://github.com/capaj/set-tz#readme",
   "devDependencies": {
     "ava": "^4.0.1",
-    "husky": "^2.3.0",
-    "prettier": "^1.17.1",
-    "pretty-quick": "^1.11.0"
+    "husky": "^5.0.9",
+    "pinst": "^2.1.4",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
   },
   "dependencies": {
     "windows-iana": "^3.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
