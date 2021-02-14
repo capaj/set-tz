@@ -26,7 +26,7 @@ It is common to run all your tests in UTC no matter which timezone your computer
 
 ```json
   "jest": {
-    "globalSetup": ['set-tz/utc']
+    "globalSetup": "set-tz/utc"
   }
 ```
 
