@@ -26,15 +26,10 @@
   },
   "homepage": "https://github.com/capaj/set-tz#readme",
   "devDependencies": {
-    "ava": "^1.4.0",
+    "ava": "^4.0.1",
     "husky": "^2.3.0",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0"
-  },
-  "ava": {
-    "files": [
-      "*.spec.js"
-    ]
   },
   "dependencies": {
     "windows-iana": "^3.0.0"

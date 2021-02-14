@@ -1,5 +1,5 @@
-import test from 'ava'
-import setTZ from '../index'
+const test = require('ava')
+const setTZ = require('../index')
 
 test('sets the timezone when the timezone is Windows format', (t) => {
   setTZ('Asia/Shanghai')
