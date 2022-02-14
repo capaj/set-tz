@@ -1,4 +1,6 @@
-# set-tz
+# set-tz DEPRECATED
+
+You may need this for nodejs 16 and lower. Nodejs 17 behaves the same in regards to the timezone as in other OSes. See https://github.com/nodejs/node/issues/4230#issuecomment-955776233
 
 sets the timezone for your node.js process across all OSes
 
